@@ -93,7 +93,8 @@ body {
 }
 
 .filter-group input[type="date"],
-.filter-group select {
+.filter-group select,
+.filter-group input[type="text"] {
   width: 100%;
   padding: 0.7rem;
   background-color: #2a2a4a; /* Darker input background */
@@ -101,6 +102,13 @@ body {
   border-radius: 5px;
   color: #e0e0e0;
   font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* Specific placeholder styling for dark inputs */
+.filter-group input::placeholder {
+  color: #7a7a9a; /* Lighter grey for placeholder */
+  opacity: 1; /* Ensure placeholder is visible */
 }
 
 .filter-group select {
@@ -110,6 +118,26 @@ body {
   background-position: right 0.7em top 50%;
   background-size: 0.65em auto;
   padding-right: 2em; /* Make space for custom arrow */
+}
+
+/* Style for the Clear Filter button */
+.clear-filter-button {
+  background-color: #3a3a5a; /* Slightly darker grey background */
+  color: #c0c0e0; /* Light purple text */
+  border: 1px solid #3a3a5a;
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clear-filter-button:hover {
+  background-color: #e94560; /* Accent color on hover, like login button */
+  color: #ffffff; /* White text on hover */
+  border-color: #e94560;
 }
 
 /* Event List Section */
