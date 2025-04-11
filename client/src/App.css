@@ -36,7 +36,22 @@ body {
   font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 1px;
+  margin-right: auto; /* Push h1 away from logo */
 }
+
+/* Remove Header Logo Styles */
+/*
+.header-logo-link {
+  display: flex; 
+  align-items: center;
+  margin-right: 1rem; 
+}
+
+.header-logo {
+  height: 40px; 
+  width: auto;
+}
+*/
 
 .login-button {
   background-color: #e94560; /* Bright accent color */
@@ -53,6 +68,16 @@ body {
 .login-button:hover {
   background-color: #ff6b81; /* Lighter accent on hover */
   transform: translateY(-2px);
+}
+
+/* Username display in Header */
+.username-display {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-left: auto; /* Push to the right */
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+  border-radius: 15px;
 }
 
 /* Main Content Layout */
