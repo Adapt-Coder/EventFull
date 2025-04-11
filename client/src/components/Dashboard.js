@@ -438,6 +438,120 @@ function Dashboard({ username }) {
       description: "Conference dedicated to the late Professor Guitty Azarpay, exploring ancient Sogdiana."
     },
 
+    // April 13, 2025
+    {
+      id: 103,
+      title: "Community Compost Event",
+      time: "2025-04-13T11:00:00",
+      location: "TBA",
+      description: "Community composting event."
+    },
+    {
+      id: 104,
+      title: "Film Screening: The Stone Cross",
+      time: "2025-04-13T13:30:00",
+      location: "Berkeley Art Museum and Pacific Film Archive",
+      description: "Screening of Leonid Osyka's renowned 1968 film."
+    },
+    {
+      id: 105,
+      title: "Exploration of Forms: Rasaboxes",
+      time: "2025-04-13T13:30:00",
+      location: "Bancroft Dance Studio, 2401 Bancroft Way",
+      description: "Workshop led by TDPS faculty exploring the heightened expression of eight primary emotions."
+    },
+    {
+      id: 106,
+      title: "Alvin Ailey American Dance Theater",
+      time: "2025-04-13T15:00:00",
+      location: "Zellerbach Hall",
+      description: "Performance by the legendary dance company."
+    },
+    {
+      id: 107,
+      title: "Owls",
+      time: "2025-04-13T15:00:00",
+      location: "Hertz Hall",
+      description: "Cal Performances presents Owls."
+    },
+    {
+      id: 108,
+      title: "Film Screening: Arsenal",
+      time: "2025-04-13T15:30:00",
+      location: "Berkeley Art Museum and Pacific Film Archive",
+      description: "Screening of Oleksandr Dovzhenko's masterful 1929 Soviet film."
+    },
+    {
+      id: 109,
+      title: "Film Screening: All We Imagine as Light",
+      time: "2025-04-13T18:00:00",
+      location: "Berkeley Art Museum and Pacific Film Archive",
+      description: "Screening of the Cannes Grand Prix winner about three hospital workers in Mumbai."
+    },
+    {
+      id: 110,
+      title: "RCC Movie Night",
+      time: "2025-04-13T19:00:00",
+      location: "International House, 2299 Piedmont Ave",
+      description: "Residential Computing Center movie night."
+    },
+    {
+      id: 111,
+      title: "Javanese Gamelan: Shadowplay",
+      time: "2025-04-13T19:30:00",
+      location: "Hertz Concert Hall",
+      description: "Experience Javanese shadow puppetry featuring Ki Hanggoro Murti and Gamelan Sari Raras."
+    },
+    {
+      id: 112,
+      title: "Exhibit | A Storied Campus: Cal in Fiction",
+      time: "2025-04-13T09:00:00", // All Day
+      location: "The Rowell Exhibition Cases, Doe Library, 2nd floor",
+      description: "Exhibition highlighting portrayals of Cal in fiction."
+    },
+    {
+      id: 113,
+      title: "Exhibit | Amy Tan's Backyard Birds",
+      time: "2025-04-13T09:00:00", // All Day
+      location: "The Bancroft Library Gallery",
+      description: "Exhibition of drawings by Amy Tan from her book 'The Backyard Bird Chronicles'."
+    },
+    {
+      id: 114,
+      title: "Exhibit | From Cartonera to Cordel: Aesthetics of Caribbean and Latin American Book Art",
+      time: "2025-04-13T09:00:00", // All Day
+      location: "Bernice Layne Brown Gallery in Doe Library",
+      description: "Exhibition showcasing ingenuity of Caribbean and Latin American publishers using repurposed materials."
+    },
+    {
+      id: 115,
+      title: "Exhibit: Future of Food",
+      time: "2025-04-13T09:00:00", // All Day
+      location: "Lawrence Hall of Science",
+      description: "Hands-on exhibition about sustainable food choices."
+    },
+    {
+      id: 116,
+      title: "Lau Grants for Just Climate Futures | Exhibition + Reception",
+      time: "2025-04-13T09:00:00", // All Day
+      location: "Bauer Wurster Gallery",
+      description: "Exhibition showcasing climate change research by CED faculty recipients of 2024 Lau Grants."
+    },
+    {
+      id: 117,
+      title: "Music in MLK",
+      time: "2025-04-13T12:00:00", // Weekly 12-1pm, assuming Sunday instance
+      location: "MLK 1st Floor Game Zone",
+      description: "Live music with UC Jazz."
+    },
+    {
+      id: 118,
+      title: "Steeped in Time: The Past & Present of Assam Tea",
+      time: "2025-04-13T09:00:00", // All Day
+      location: "120 Doe Library (South/Southeast Asia Library)",
+      description: "A curated exhibition that traces the enduring legacy and evolving future of Assam tea."
+    },
+
     // April 14, 2025
     {
       id: 67,
