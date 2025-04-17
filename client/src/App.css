@@ -80,6 +80,12 @@ body {
   border-radius: 15px;
 }
 
+/* Make username link look like plain text */
+.username-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+}
+
 /* Main Content Layout */
 .main-content {
   display: flex;
@@ -286,6 +292,23 @@ body {
   border-color: #e94560;
 }
 
+/* Styles for the save/unsave button and saved card */
+.event-card.saved {
+  border-left: 4px solid #e94560; /* Add accent border to saved cards */
+}
+
+.save-button.saved {
+  background-color: #5a5a7a; /* Different background when saved */
+  color: #e0e0e0;
+  border-color: #5a5a7a;
+}
+
+.save-button.saved:hover {
+  background-color: #ff6b81; /* Use lighter accent on hover for unsave */
+  border-color: #ff6b81;
+  color: #ffffff;
+}
+
 /* Footer Styling */
 .app-footer {
   background-color: #16222a; /* Match header gradient start */
@@ -319,4 +342,30 @@ body {
   .event-list {
     grid-template-columns: 1fr; /* Single column on small screens */
   }
+}
+
+/* Specific styles for Saved Events page */
+.saved-events-content {
+  /* Center content if needed, or just use default flex layout */
+  padding: 1.5rem; 
+}
+
+.no-saved-message {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #a0a0e0;
+}
+
+/* Style for the Back to Dashboard link in SavedEventsPage header */
+.nav-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 } 
