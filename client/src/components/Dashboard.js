@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import StarRating from './StarRating';
 
 // Renamed App to Dashboard
-function Dashboard({ username, events, savedEventIds, onToggleSave }) {
+function Dashboard({ user, events, savedEventIds, onToggleSave, eventRatings, onRateEvent, onLogout }) {
   // State for filters
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
@@ -37,11 +38,14 @@ function Dashboard({ username, events, savedEventIds, onToggleSave }) {
     <>
       <header className="app-header">
         <h1>EventFull Dashboard</h1>
-        {username && (
-          <Link to="/saved" className="username-link">
-            <span className="username-display">Welcome, {username}!</span>
-          </Link>
-        )}
+        <div className="user-info">
+          {user && (
+            <Link to="/saved" className="username-link">
+              <span className="username-display">{user.email || 'My Saved Events'}</span>
+            </Link>
+          )}
+          <button onClick={onLogout} className="logout-button">Logout</button>
+        </div>
       </header>
 
       <main className="main-content">
@@ -100,6 +104,7 @@ function Dashboard({ username, events, savedEventIds, onToggleSave }) {
             {filteredEvents.length > 0 ? (
               filteredEvents.map(event => {
                 const isSaved = savedEventIds.has(event.id);
+                const currentRating = eventRatings[event.id] || 0;
                 return (
                   <div key={event.id} className={`event-card ${isSaved ? 'saved' : ''}`}>
                     <h2>{event.title}</h2>
@@ -115,7 +120,11 @@ function Dashboard({ username, events, savedEventIds, onToggleSave }) {
                       >
                         {isSaved ? 'Unsave' : 'Save'}
                       </button>
-                      <button>Rate</button>
+                      <StarRating 
+                        rating={currentRating}
+                        onRate={onRateEvent}
+                        eventId={event.id}
+                      />
                     </div>
                   </div>
                 );

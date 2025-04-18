@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css'; // Reuse general App styles
+import StarRating from './StarRating'; // Import StarRating
 
 // Component to display only the saved events
-function SavedEventsPage({ events, savedEventIds, onToggleSave }) {
+function SavedEventsPage({ events, savedEventIds, onToggleSave, eventRatings, onRateEvent }) {
 
   // Filter the main events list to get only the saved ones
   const savedEvents = events.filter(event => savedEventIds.has(event.id));
@@ -21,6 +22,7 @@ function SavedEventsPage({ events, savedEventIds, onToggleSave }) {
           <div className="event-list"> {/* Reuse event list styling */} 
             {savedEvents.map(event => {
               const isSaved = true; // All events here are saved
+              const currentRating = eventRatings[event.id] || 0; // Get rating
               return (
                 <div key={event.id} className={`event-card saved`}> 
                   <h2>{event.title}</h2>
@@ -37,7 +39,12 @@ function SavedEventsPage({ events, savedEventIds, onToggleSave }) {
                     >
                       Unsave
                     </button>
-                    <button disabled>Rate</button> {/* Disable Rate button here for now */}
+                    {/* Add StarRating component */}
+                    <StarRating 
+                        rating={currentRating}
+                        onRate={onRateEvent} 
+                        eventId={event.id}
+                      />
                   </div>
                 </div>
               );

@@ -5,9 +5,12 @@ import {
   Route,
   Navigate // To redirect users
 } from 'react-router-dom';
+import { onAuthStateChanged, signOut } from "firebase/auth"; // Import Firebase auth functions
+import { auth } from './firebaseConfig'; // Import the configured auth instance
 import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
 import SavedEventsPage from './components/SavedEventsPage'; // Import SavedEventsPage
+import SignUpPage from './components/SignUpPage'; // Import SignUpPage
 import './App.css'; // Keep global styles if needed
 
 // Define events data outside the component or fetch it if needed
@@ -276,25 +279,44 @@ const events = [
 ];
 
 function App() {
-  // Simple state to track login status
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null); // Add state for user info
+  // Remove isLoggedIn state, derive from currentUser
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null); // Can store the Firebase user object
+  const [loadingAuth, setLoadingAuth] = useState(true); // State to track initial auth check
 
-  // Lifted state for saved events
+  // Lifted state for saved events and ratings
   const [savedEventIds, setSavedEventIds] = useState(() => {
     const saved = localStorage.getItem('savedEventIds');
     return saved ? new Set(JSON.parse(saved)) : new Set();
   });
 
-  // Lifted effect for localStorage persistence
+  // Ratings state { eventId: rating }
+  const [eventRatings, setEventRatings] = useState(() => {
+    const savedRatings = localStorage.getItem('eventRatings');
+    return savedRatings ? JSON.parse(savedRatings) : {};
+  });
+
+  // Lifted effects for localStorage persistence
   useEffect(() => {
     localStorage.setItem('savedEventIds', JSON.stringify(Array.from(savedEventIds)));
   }, [savedEventIds]);
 
-  const handleLogin = (username) => { // Accept username
-    setIsLoggedIn(true);
-    setCurrentUser(username); // Store username
-  };
+  // Effect for saving ratings
+  useEffect(() => {
+    localStorage.setItem('eventRatings', JSON.stringify(eventRatings));
+  }, [eventRatings]);
+
+  // Listener for Firebase Auth state changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user); // Set to user object if logged in, null if logged out
+      setLoadingAuth(false); // Auth check is complete
+      console.log("Auth state changed, user:", user);
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []); // Empty dependency array ensures this runs only once
 
   // Lifted handler for toggling save status
   const handleToggleSave = (eventId) => {
@@ -309,11 +331,33 @@ function App() {
     });
   };
 
-  // Placeholder for logout
-  // const handleLogout = () => {
-  //  setIsLoggedIn(false);
-  //  setCurrentUser(null); // Clear username
-  // };
+  // Lifted handler for rating an event
+  const handleRateEvent = (eventId, rating) => {
+    setEventRatings(prevRatings => ({
+      ...prevRatings,
+      [eventId]: rating
+    }));
+  };
+
+  // Logout handler
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      // Clear local user-specific data if needed (optional)
+      // setSavedEventIds(new Set()); 
+      // setEventRatings({});
+      // setCurrentUser will be set to null by onAuthStateChanged
+      console.log("User logged out successfully");
+    } catch (error) {
+      console.error("Logout Error:", error);
+      // Handle logout errors if necessary
+    }
+  };
+
+  // Show loading indicator while checking auth state
+  if (loadingAuth) {
+    return <div className="loading-auth">Checking authentication...</div>; // Add basic styling for this
+  }
 
   return (
     <Router>
@@ -321,17 +365,25 @@ function App() {
       <Routes>
         <Route
           path="/login"
-          element={!isLoggedIn ? <LoginPage onLogin={handleLogin} /> : <Navigate to="/dashboard" replace />}
+          element={!currentUser ? <LoginPage /> : <Navigate to="/dashboard" replace />}
+        />
+        {/* Add Sign Up route */}
+        <Route 
+          path="/signup"
+          element={!currentUser ? <SignUpPage /> : <Navigate to="/dashboard" replace />} 
         />
         <Route
           path="/dashboard"
           element={
-            isLoggedIn ? (
+            currentUser ? (
               <Dashboard 
-                username={currentUser} 
-                events={events} // Pass events down
-                savedEventIds={savedEventIds} // Pass saved IDs down
-                onToggleSave={handleToggleSave} // Pass handler down
+                user={currentUser} // Pass the whole user object or specific fields like email
+                events={events} 
+                savedEventIds={savedEventIds} 
+                onToggleSave={handleToggleSave} 
+                eventRatings={eventRatings} 
+                onRateEvent={handleRateEvent}
+                onLogout={handleLogout} // Pass logout handler
               />
             ) : (
               <Navigate to="/login" replace />
@@ -342,11 +394,13 @@ function App() {
         <Route 
           path="/saved"
           element={
-            isLoggedIn ? (
+            currentUser ? (
               <SavedEventsPage 
-                events={events} // Pass events down
-                savedEventIds={savedEventIds} // Pass saved IDs down
-                onToggleSave={handleToggleSave} // Pass handler down
+                events={events} 
+                savedEventIds={savedEventIds} 
+                onToggleSave={handleToggleSave} 
+                eventRatings={eventRatings} 
+                onRateEvent={handleRateEvent}
               /> 
             ) : (
               <Navigate to="/login" replace />
@@ -359,7 +413,7 @@ function App() {
         {/* Redirect root path */}
         <Route
           path="/"
-          element={isLoggedIn ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />}
+          element={currentUser ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />}
         />
         {/* Optional 404 route */}
         {/* <Route path="*" element={<div>404 Not Found</div>} /> */}

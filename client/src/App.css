@@ -84,6 +84,44 @@ body {
 .username-link {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit text color */
+  margin-right: 1rem; /* Space between email and logout button */
+}
+
+/* Container for user email link and logout button */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push this block to the right */
+}
+
+/* Logout button styling (similar to login) */
+.logout-button {
+  background-color: #e94560;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem; /* Slightly smaller than login page button */
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(233, 69, 96, 0.3);
+}
+
+.logout-button:hover {
+  background-color: #ff6b81;
+  transform: translateY(-1px);
+}
+
+/* Style for loading auth message */
+.loading-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  background-color: #1a1a2e; 
 }
 
 /* Main Content Layout */

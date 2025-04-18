@@ -1,0 +1,35 @@
+/* StarRating.css */
+.star-rating {
+  display: inline-flex; /* Align stars horizontally */
+  align-items: center;
+  margin-left: 0.5rem; /* Space from Save button */
+}
+
+.star {
+  cursor: pointer;
+  color: #5a5a7a; /* Default empty star color (dark grey) */
+  font-size: 1.5rem; /* Adjust size */
+  margin: 0 1px; /* Small space between stars */
+  transition: color 0.2s ease-in-out;
+}
+
+.star.filled {
+  color: #ffc107; /* Gold color for filled stars */
+}
+
+/* Optional hover effect */
+.star-rating:hover .star {
+  color: #ffda6b; /* Lighter gold on hover over the whole rating area */
+}
+
+/* Change color of stars up to the hovered one */
+.star-rating .star:hover ~ .star {
+  color: #5a5a7a; /* Reset subsequent stars to empty */
+}
+
+/* Optional: Style for numerical rating */
+.rating-number {
+  font-size: 0.85rem;
+  margin-left: 0.4rem;
+  color: #a0a0e0;
+} 
