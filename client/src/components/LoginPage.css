@@ -52,7 +52,8 @@
 }
 
 .login-form-container input[type="text"],
-.login-form-container input[type="email"] {
+.login-form-container input[type="email"],
+.login-form-container input[type="password"] {
   width: 100%;
   padding: 0.8rem 1rem;
   background-color: #2a2a4a; /* Darker input background */
@@ -64,7 +65,8 @@
 }
 
 .login-form-container input[type="text"]:focus,
-.login-form-container input[type="email"]:focus {
+.login-form-container input[type="email"]:focus,
+.login-form-container input[type="password"]:focus {
   outline: none;
   border-color: #e94560; /* Accent color border on focus */
   box-shadow: 0 0 0 2px rgba(233, 69, 96, 0.3); /* Subtle glow */
