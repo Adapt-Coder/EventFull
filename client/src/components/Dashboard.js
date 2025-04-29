@@ -4,7 +4,7 @@ import '../App.css';
 import StarRating from './StarRating';
 
 // Renamed App to Dashboard
-function Dashboard({ user, events, savedEventIds, onToggleSave, eventRatings, onRateEvent, onLogout }) {
+function Dashboard({ user, events, savedEventIds, onToggleSave, eventRatings, onRateEvent, onLogout, themeToggle }) {
   // State for filters
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
@@ -40,9 +40,12 @@ function Dashboard({ user, events, savedEventIds, onToggleSave, eventRatings, on
         <h1>EventFull Dashboard</h1>
         <div className="user-info">
           {user && (
-            <Link to="/saved" className="username-link">
-              <span className="username-display">{user.email || 'My Saved Events'}</span>
-            </Link>
+            <>
+              {themeToggle}
+              <Link to="/saved" className="username-link">
+                <span className="username-display">{user.email || 'My Saved Events'}</span>
+              </Link>
+            </>
           )}
           <button onClick={onLogout} className="logout-button">Logout</button>
         </div>

@@ -11,7 +11,22 @@ import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
 import SavedEventsPage from './components/SavedEventsPage'; // Import SavedEventsPage
 import SignUpPage from './components/SignUpPage'; // Import SignUpPage
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import './App.css'; // Keep global styles if needed
+
+// Theme Toggle Button Component
+const ThemeToggle = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
+  return (
+    <button 
+      onClick={toggleTheme}
+      className="theme-toggle"
+      title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+    >
+      {isDarkMode ? '☀️' : '🌙'}
+    </button>
+  );
+};
 
 // Define events data outside the component or fetch it if needed
 const events = [
@@ -360,65 +375,59 @@ function App() {
   }
 
   return (
-    <Router>
-      {/* Removed the outer app-container div from here, as components handle their layout */}
-      <Routes>
-        <Route
-          path="/login"
-          element={!currentUser ? <LoginPage /> : <Navigate to="/dashboard" replace />}
-        />
-        {/* Add Sign Up route */}
-        <Route 
-          path="/signup"
-          element={!currentUser ? <SignUpPage /> : <Navigate to="/dashboard" replace />} 
-        />
-        <Route
-          path="/dashboard"
-          element={
-            currentUser ? (
-              <Dashboard 
-                user={currentUser} // Pass the whole user object or specific fields like email
-                events={events} 
-                savedEventIds={savedEventIds} 
-                onToggleSave={handleToggleSave} 
-                eventRatings={eventRatings} 
-                onRateEvent={handleRateEvent}
-                onLogout={handleLogout} // Pass logout handler
-              />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
-        />
-        {/* Add Saved Events route */}
-        <Route 
-          path="/saved"
-          element={
-            currentUser ? (
-              <SavedEventsPage 
-                events={events} 
-                savedEventIds={savedEventIds} 
-                onToggleSave={handleToggleSave} 
-                eventRatings={eventRatings} 
-                onRateEvent={handleRateEvent}
-              /> 
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
-        />
-        {/* Remove About route */}
-        {/* <Route path="/about" element={<AboutPage />} /> */}
-        
-        {/* Redirect root path */}
-        <Route
-          path="/"
-          element={currentUser ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />}
-        />
-        {/* Optional 404 route */}
-        {/* <Route path="*" element={<div>404 Not Found</div>} /> */}
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route
+            path="/login"
+            element={!currentUser ? <LoginPage /> : <Navigate to="/dashboard" replace />}
+          />
+          <Route 
+            path="/signup"
+            element={!currentUser ? <SignUpPage /> : <Navigate to="/dashboard" replace />} 
+          />
+          <Route
+            path="/dashboard"
+            element={
+              currentUser ? (
+                <Dashboard 
+                  user={currentUser}
+                  events={events} 
+                  savedEventIds={savedEventIds} 
+                  onToggleSave={handleToggleSave} 
+                  eventRatings={eventRatings} 
+                  onRateEvent={handleRateEvent}
+                  onLogout={handleLogout}
+                  themeToggle={<ThemeToggle />}
+                />
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+          <Route 
+            path="/saved"
+            element={
+              currentUser ? (
+                <SavedEventsPage 
+                  events={events} 
+                  savedEventIds={savedEventIds} 
+                  onToggleSave={handleToggleSave} 
+                  eventRatings={eventRatings} 
+                  onRateEvent={handleRateEvent}
+                /> 
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+          <Route
+            path="/"
+            element={currentUser ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />}
+          />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

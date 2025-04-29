@@ -5,19 +5,19 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Full viewport height */
-  background-color: #1a1a2e; /* Match main background */
+  background-color: var(--bg-primary); /* Match main background */
   padding: 2rem;
 }
 
 .login-form-container {
-  background-color: #1f1f38; /* Slightly lighter dark background */
+  background-color: var(--bg-secondary); /* Slightly lighter dark background */
   padding: 3rem 2.5rem;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px var(--shadow-color);
   text-align: center;
   max-width: 400px;
   width: 100%;
-  color: #e0e0e0;
+  color: var(--text-primary);
 }
 
 /* Style for the logo */
@@ -28,13 +28,13 @@
 }
 
 .login-form-container h1 {
-  color: #e94560; /* Accent color */
+  color: var(--accent-color); /* Accent color */
   margin-bottom: 0.5rem;
   font-size: 2.2rem;
 }
 
 .login-form-container p {
-  color: #a0a0e0; /* Lighter purple */
+  color: var(--text-secondary); /* Lighter purple */
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -48,7 +48,7 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #a0a0e0; /* Lighter purple */
+  color: var(--text-secondary); /* Lighter purple */
 }
 
 .login-form-container input[type="text"],
@@ -56,10 +56,10 @@
 .login-form-container input[type="password"] {
   width: 100%;
   padding: 0.8rem 1rem;
-  background-color: #2a2a4a; /* Darker input background */
-  border: 1px solid #3a3a5a;
+  background-color: var(--input-bg); /* Darker input background */
+  border: 1px solid var(--input-border);
   border-radius: 5px;
-  color: #e0e0e0;
+  color: var(--text-primary);
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
@@ -68,12 +68,12 @@
 .login-form-container input[type="email"]:focus,
 .login-form-container input[type="password"]:focus {
   outline: none;
-  border-color: #e94560; /* Accent color border on focus */
+  border-color: var(--accent-color); /* Accent color border on focus */
   box-shadow: 0 0 0 2px rgba(233, 69, 96, 0.3); /* Subtle glow */
 }
 
 .login-submit-button {
-  background-color: #e94560; /* Bright accent color */
+  background-color: var(--accent-color); /* Bright accent color */
   color: #ffffff;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -87,13 +87,13 @@
 }
 
 .login-submit-button:hover {
-  background-color: #ff6b81; /* Lighter accent on hover */
+  background-color: var(--accent-hover); /* Lighter accent on hover */
   transform: translateY(-2px);
 }
 
 /* Style for login error messages */
 .error-message {
-  color: #ff6b81; /* Lighter accent color for errors */
+  color: var(--accent-hover); /* Lighter accent color for errors */
   background-color: rgba(233, 69, 96, 0.1); /* Faint background */
   padding: 0.5rem;
   border-radius: 4px;
@@ -107,11 +107,11 @@
 .signup-link {
   margin-top: 1.5rem;
   font-size: 0.9rem;
-  color: #a0a0e0;
+  color: var(--text-secondary);
 }
 
 .signup-link a {
-  color: #e94560;
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: bold;
 }
