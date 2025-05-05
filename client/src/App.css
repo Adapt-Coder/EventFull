@@ -452,4 +452,32 @@ body {
 
 .theme-toggle:hover {
   transform: scale(1.1);
+}
+
+/* View Controls for Saved Events */
+.view-controls {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.view-button {
+  background-color: #2a2a4a;
+  color: #e0e0e0;
+  border: 1px solid #3a3a5a;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #3a3a5a;
+  color: #ffffff;
+}
+
+.view-button.active {
+  background-color: #e94560;
+  color: #ffffff;
+  border-color: #e94560;
 } 
