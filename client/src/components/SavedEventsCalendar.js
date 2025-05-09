@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
@@ -32,6 +32,10 @@ function SavedEventsCalendar({ events, savedEventIds }) {
     resource: event
   }));
 
+  // Add state for view and date
+  const [view, setView] = useState('month');
+  const [date, setDate] = useState(new Date());
+
   return (
     <div className="calendar-container">
       <Calendar
@@ -52,6 +56,10 @@ function SavedEventsCalendar({ events, savedEventIds }) {
             display: 'block',
           },
         })}
+        view={view}
+        date={date}
+        onView={setView}
+        onNavigate={setDate}
       />
     </div>
   );

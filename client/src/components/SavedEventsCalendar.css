@@ -54,6 +54,10 @@
   color: #ffffff;
 }
 
+.rbc-toolbar button.rbc-today {
+  display: none !important;
+}
+
 .rbc-month-view {
   border: 1px solid #3a3a5a;
 }
