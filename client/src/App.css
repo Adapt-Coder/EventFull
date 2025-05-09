@@ -438,7 +438,7 @@ body {
 
 /* Style for the Back to Dashboard link in SavedEventsPage header */
 .nav-link {
-  color: #e0e0e0;
+  color: var(--text-primary);
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 15px;
