@@ -45,8 +45,8 @@ body {
 
 /* Header Styling */
 .app-header {
-  background: linear-gradient(90deg, #16222a, #3a6073); /* Dark blue gradient */
-  color: #ffffff;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -99,17 +99,32 @@ body {
 .username-display {
   font-size: 0.95rem;
   font-weight: 500;
-  margin-left: auto; /* Push to the right */
-  padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
-  border-radius: 15px;
+  margin-left: auto;
+  padding: 0;
+  background: none;
+  border-radius: 0;
 }
 
 /* Make username link look like plain text */
 .username-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit text color */
-  margin-right: 1rem; /* Space between email and logout button */
+  text-decoration: none;
+  color: inherit;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  font-weight: 500;
+  box-shadow: 0 1px 4px var(--shadow-color);
+}
+
+.username-link:hover, .username-link:focus {
+  background: var(--accent-hover);
+  color: #fff;
+  text-decoration: underline;
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 /* Container for user email link and logout button */
@@ -155,16 +170,17 @@ body {
   flex: 1;
   padding: 1.5rem;
   gap: 1.5rem;
+  background-color: var(--bg-primary);
 }
 
 /* Filters Sidebar Styling */
 .filters-sidebar {
-  background-color: #1f1f38; /* Slightly lighter dark background */
+  background-color: var(--bg-secondary);
   padding: 1.5rem;
   border-radius: 10px;
-  width: 250px; /* Fixed width for sidebar */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  height: fit-content; /* Adjust height to content */
+  width: 250px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  height: fit-content;
 }
 
 .filters-sidebar h2 {
@@ -191,18 +207,18 @@ body {
 .filter-group input[type="text"] {
   width: 100%;
   padding: 0.7rem;
-  background-color: #2a2a4a; /* Darker input background */
-  border: 1px solid #3a3a5a;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 5px;
-  color: #e0e0e0;
+  color: var(--text-primary);
   font-size: 0.9rem;
   margin-top: 0.3rem;
 }
 
 /* Specific placeholder styling for dark inputs */
 .filter-group input::placeholder {
-  color: #7a7a9a; /* Lighter grey for placeholder */
-  opacity: 1; /* Ensure placeholder is visible */
+  color: #7a7a9a;
+  opacity: 1;
 }
 
 .filter-group select {
@@ -246,19 +262,19 @@ body {
 .search-bar {
   display: flex;
   gap: 0.5rem;
-  background-color: #1f1f38;
+  background-color: var(--bg-secondary);
   padding: 0.8rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .search-bar input[type="text"] {
   flex-grow: 1;
   padding: 0.8rem 1rem;
-  border: 1px solid #3a3a5a;
-  border-radius: 20px 0 0 20px; /* Rounded left corners */
-  background-color: #2a2a4a;
-  color: #e0e0e0;
+  border: 1px solid var(--input-border);
+  border-radius: 20px 0 0 20px;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
   font-size: 1rem;
   outline: none;
 }
@@ -288,10 +304,10 @@ body {
 
 /* Event Card Styling */
 .event-card {
-  background-color: #2a2a4a; /* Dark card background */
+  background-color: var(--bg-secondary); /* Use theme variable instead of hardcoded color */
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 15px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -300,7 +316,7 @@ body {
 
 .event-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3); /* Glow effect on hover */
+  box-shadow: 0 8px 25px var(--shadow-color);
 }
 
 .event-card h2 {
