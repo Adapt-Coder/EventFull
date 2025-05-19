@@ -452,6 +452,320 @@ const events = [
       time: "2025-05-02T20:00:00",
       location: "Wu Performance Hall",
       description: "Flute performance by Tansy Chen"
+    },
+    {
+      id: 60,
+      title: "Exhibit | A Storied Campus: Cal in Fiction",
+      time: "2025-05-18T09:00:00",
+      location: "The Rowell Exhibition Cases, Doe Library, 2nd floor",
+      description: "Exhibition highlights portrayals of Cal in fiction through book covers, excerpts, illustrations, photographs, and more from the University Archives and Bancroft Library collections.",
+      isAllDay: true
+    },
+    {
+      id: 61,
+      title: "Exhibit | Amy Tan's Backyard Birds",
+      time: "2025-05-18T09:00:00",
+      location: "The Bancroft Library Gallery",
+      description: "A series of whimsical bird drawings by Amy Tan, featured in her bestselling book The Backyard Bird Chronicles.",
+      isAllDay: true
+    },
+    {
+      id: 62,
+      title: "Exhibit | From Cartonera to Cordel: Aesthetics of Caribbean and Latin American Book Art",
+      time: "2025-05-18T09:00:00",
+      location: "Bernice Layne Brown Gallery in Doe Library",
+      description: "Showcasing upcycled literary art from Caribbean and Latin American publishers and artists, reflecting unique viewpoints and folkloric aesthetics.",
+      isAllDay: true
+    },
+    {
+      id: 63,
+      title: "Music in MLK with UC Jazz",
+      time: "2025-05-18T12:00:00",
+      location: "MLK 1st Floor Game Zone",
+      description: "Sit back and relax while enjoying live music with UC Jazz. Ongoing Thursdays, 12-1pm.",
+      isAllDay: false
+    },
+    {
+      id: 64,
+      title: "Out of the Wild + Into the Garden: Exhibition",
+      time: "2025-05-18T09:00:00",
+      location: "Environmental Design Library, 210 Bauer Wurster Hall",
+      description: "Features giclee prints of herbarium specimens, historical documentation of UC Berkeley's Blake Garden, and pressed plant compositions by Katherine Greenberg.",
+      isAllDay: true
+    },
+    {
+      id: 65,
+      title: "Steeped in Time: The Past & Present of Assam Tea",
+      time: "2025-05-18T09:00:00",
+      location: "120 Doe Library (South/Southeast Asia Library)",
+      description: "Exhibition tracing the legacy and future of Assam tea, curated by Shreya Chaudhuri, exploring colonial legacies and Indigenous agroforestry practices.",
+      isAllDay: true
+    },
+    {
+      id: 66,
+      title: "Film and Video Makers at Cal: Works from the Eisner Competition",
+      time: "2025-05-18T14:00:00",
+      location: "Berkeley Art Museum and Pacific Film Archive",
+      description: "Screening of outstanding student films, prizewinners, and honorable mentions in the Eisner Prize competition. Includes Q&A with filmmakers."
+    },
+    {
+      id: 67,
+      title: "Rausser College of Natural Resources Commencement",
+      time: "2025-05-18T19:00:00",
+      location: "Hearst Greek Theatre",
+      description: "Commencement ceremony for graduate and undergraduate students of Rausser College of Natural Resources. Livestream available."
+    },
+    {
+      id: 68,
+      title: "Cost Share - RAPDP Specialty",
+      time: "2025-05-19T09:00:00",
+      location: "Zoom",
+      description: "Workshop on proposing, setting up, tracking, and reporting on cost-share commitments to a sponsored project."
+    },
+    {
+      id: 69,
+      title: "Probabilistic Operator Algebra Seminar: Tensor free independence and central limit theorem",
+      time: "2025-05-19T09:00:00",
+      location: "Zoom",
+      description: "Speaker: Sang-Jun Park, University of Toulouse CNRS. Seminar on tensor free independence in random matrices and a new form of the central limit theorem."
+    },
+    {
+      id: 70,
+      title: "Move Out",
+      time: "2025-05-19T10:00:00",
+      location: "Stanley Hall, Room 177",
+      description: "Move out event for students."
+    },
+    {
+      id: 71,
+      title: "Bioengineering Seminar: Targeting Stromal Cells for Immuno-Engineering",
+      time: "2025-05-19T11:00:00",
+      location: "Stanley Hall, Room 177",
+      description: "Dr. Andy Tay, National University of Singapore. Seminar on targeting stromal cells for immuno-engineering."
+    },
+    {
+      id: 72,
+      title: "BPH Commencement Ceremony",
+      time: "2025-05-19T14:00:00",
+      location: "Hearst Greek Theatre",
+      description: "School of Public Health Class of 2025 commencement ceremony. Reception at Campanile Esplanade 5-6pm."
+    },
+    {
+      id: 73,
+      title: "Theater, Dance, and Performance Studies Commencement Ceremony",
+      time: "2025-05-19T14:00:00",
+      location: "Zellerbach Playhouse",
+      description: "Commencement ceremony for the Department of Theater, Dance, and Performance Studies."
+    },
+    {
+      id: 74,
+      title: "Special Condensed Matter Seminar",
+      time: "2025-05-19T14:30:00",
+      location: "50 Birge Hall",
+      description: "Speaker and lecture description to be released."
+    },
+    {
+      id: 75,
+      title: "Dissertation Talk: End-to-end Heterogeneous System Design for Hyperscale Big Data Processing",
+      time: "2025-05-19T15:00:00",
+      location: "Wozniak Lounge (430-438), Soda Hall",
+      description: "Dissertation talk on system design for big data processing."
+    },
+    {
+      id: 76,
+      title: "Cognitive Neuroscience Colloquium",
+      time: "2025-05-19T15:00:00",
+      location: "1104 Berkeley Way West",
+      description: "Alex Gileles-Hillel and Shoham Choshen-Hillel present at the Cognitive Neuroscience Colloquium."
+    },
+    {
+      id: 77,
+      title: "Chemistry Symposium Day",
+      time: "2025-05-20T09:00:00",
+      location: "Chemistry Plaza, including Tan 100, Latimer 120, and more",
+      description: "All-day event fostering scientific discussion, collaboration, and networking among Chemistry Department members."
+    },
+    {
+      id: 78,
+      title: "BPM 202 Communicating with Impact",
+      time: "2025-05-20T09:00:00",
+      location: "Virtual Classroom",
+      description: "Workshop for UC Berkeley Staff on effective communication tools and techniques."
+    },
+    {
+      id: 79,
+      title: "Traffic Flow Principles for Practitioners",
+      time: "2025-05-20T09:00:00",
+      location: "Online",
+      description: "Class on traffic flow principles for practitioners. Daily sessions to May 22."
+    },
+    {
+      id: 80,
+      title: "2025 College of Environmental Design Commencement",
+      time: "2025-05-20T09:00:00",
+      location: "Greek Theatre",
+      description: "Commencement ceremony for the College of Environmental Design."
+    },
+    {
+      id: 81,
+      title: "New Employee Resource Orientation (NERO) Virtual",
+      time: "2025-05-20T09:00:00",
+      location: "Online",
+      description: "Orientation for new employees to learn about campus resources, benefits, and history."
+    },
+    {
+      id: 82,
+      title: "2025 Department of History Commencement",
+      time: "2025-05-20T09:30:00",
+      location: "Zellerbach Hall",
+      description: "History Department commencement ceremony at Zellerbach Auditorium."
+    },
+    {
+      id: 83,
+      title: "MTx/Neuroscience Seminar: Decoding neurodegeneration using iPSCs, CRISPR, and 'omics",
+      time: "2025-05-20T10:00:00",
+      location: "245 Li Ka Shing Center",
+      description: "Seminar on decoding neurodegeneration using iPSCs, CRISPR, and omics."
+    },
+    {
+      id: 84,
+      title: "Microsoft Excel Scenario Analysis",
+      time: "2025-05-20T13:30:00",
+      location: "Virtual Classroom",
+      description: "Course on scenario analysis in Microsoft Excel workbooks."
+    },
+    {
+      id: 85,
+      title: "Pavement Sustainability",
+      time: "2025-05-20T14:00:00",
+      location: "Online",
+      description: "Class on pavement sustainability. Sessions continue to May 22."
+    },
+    {
+      id: 86,
+      title: "Library Workshop: Developing and using open-source software tools",
+      time: "2025-05-20T15:00:00",
+      location: "Online",
+      description: "Bay Area Open Science Group May Meeting: Developing and using open-source software tools for neuroinformatics and biomechanics."
+    },
+    {
+      id: 87,
+      title: "The Film & Media Commencement Ceremony",
+      time: "2025-05-20T19:00:00",
+      location: "Zellerbach Hall",
+      description: "Commencement ceremony for the Film & Media Department."
+    },
+    {
+      id: 88,
+      title: "The Rhetoric Commencement Ceremony",
+      time: "2025-05-20T19:00:00",
+      location: "Zellerbach Hall",
+      description: "Commencement ceremony for the Rhetoric Department."
+    },
+    {
+      id: 89,
+      title: "Neuroscience Spring Thesis Symposium",
+      time: "2025-05-21T09:00:00",
+      location: "101 Barker Hall",
+      description: "Symposium for neuroscience spring thesis presentations."
+    },
+    {
+      id: 90,
+      title: "Class of 2025 Engineering Baccalaureate Degree Commencement",
+      time: "2025-05-21T09:00:00",
+      location: "Hearst Greek Theatre",
+      description: "Commencement ceremony for Baccalaureate degree graduates of the College of Engineering."
+    },
+    {
+      id: 91,
+      title: "Coffee Connection",
+      time: "2025-05-21T09:00:00",
+      location: "2121 Berkeley Way West - Patricia A. Buffler Emeritus Room",
+      description: "Coffee Connection networking event."
+    },
+    {
+      id: 92,
+      title: "Desk Dynamics: Your Guide to Finding, Setting Up, and Using Height-Adjustable Tables",
+      time: "2025-05-21T10:00:00",
+      location: "Class of '42, Tang Center",
+      description: "Workshop on ergonomic and wellness benefits of height adjustable tables."
+    },
+    {
+      id: 93,
+      title: "Post-Baccalaureate Program for Counseling and Psychology Professions Online Information Session",
+      time: "2025-05-21T10:00:00",
+      location: "Online via Zoom",
+      description: "Information session for the Post-Baccalaureate Program for Counseling and Psychology Professions."
+    },
+    {
+      id: 94,
+      title: "STEM OPT Document Check Workshop",
+      time: "2025-05-21T10:30:00",
+      location: "Zoom",
+      description: "Workshop for STEM OPT application preparation."
+    },
+    {
+      id: 95,
+      title: "Bilateral Assistance from Active Knee Exoskeletons Reduce the Difficulty of Occupational Lifting and Lowering Tasks",
+      time: "2025-05-21T12:00:00",
+      location: "Warren Hall Room 205A",
+      description: "Grace Hunt presents on exoskeletons and occupational lifting."
+    },
+    {
+      id: 96,
+      title: "Redwood Seminar: A theory of canonical thalamo-cortical microcircuits for predictive visual inference.",
+      time: "2025-05-21T12:00:00",
+      location: "Warren Hall Room 205A",
+      description: "Dileep George presents on thalamo-cortical microcircuits."
+    },
+    {
+      id: 97,
+      title: "Dissertation Talk: Perspectives on Multi-Agent System",
+      time: "2025-05-21T12:00:00",
+      location: "212 Cory",
+      description: "Dissertation talk on multi-agent systems."
+    },
+    {
+      id: 98,
+      title: "Sold Out: Arlie Hochschild, Stolen Pride: Loss, Shame, and the Rise of the Right",
+      time: "2025-05-21T13:00:00",
+      location: "St. Paul's Towers",
+      description: "Arlie Russell Hochschild discusses her new book Stolen Pride."
+    },
+    {
+      id: 99,
+      title: "Class of 2025 Engineering Master's Degree Commencement",
+      time: "2025-05-21T14:00:00",
+      location: "Hearst Greek Theatre",
+      description: "Commencement ceremony for Master's degree graduates of the College of Engineering."
+    },
+    {
+      id: 100,
+      title: "Regulation of mitochondrial biogenesis in neurons",
+      time: "2025-05-21T15:00:00",
+      location: "125 Li Ka Shing Center",
+      description: "Seminar on mitochondrial biogenesis in neurons."
+    },
+    {
+      id: 101,
+      title: "Deciphering the anti-oncogenic effect of oncoproteins in the liver",
+      time: "2025-05-21T16:00:00",
+      location: "114 Morgan Hall",
+      description: "Gen-Sheng Feng, UC San Diego, presents on anti-oncogenic effects in liver cancer."
+    },
+    {
+      id: 102,
+      title: "Advanced Research on the Science You Learned in High School",
+      time: "2025-05-21T17:00:00",
+      location: "Zoom",
+      description: "Basic Science Lights the Way series: virtual discussions with faculty and students."
+    },
+    {
+      id: 103,
+      title: "Toastmasters on Campus: Learn to improve your public speaking skills",
+      time: "2025-05-21T18:15:00",
+      location: "Zoom",
+      description: "Weekly Toastmasters club meeting for public speaking practice."
     }
 ];
 
